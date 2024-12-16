@@ -46,12 +46,10 @@ export async function createTransaction(data: TransactionSchema) {
 }
 
 export async function handleSignOut() {
-  'use server'
   await signOut()
 }
 
 export async function handleGitHubSignIn() {
-  'use server'
   await signIn('github', { callbackUrl: '/dashboard' })
 }
 

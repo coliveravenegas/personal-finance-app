@@ -2,3 +2,7 @@ name: personal-finance-tracker
 namespace: carlos-alfredo-beta
 origin:
   path: /Users/charles/personal-finance-tracker
+configuration:
+  routes:
+    - http://personal-finance-tracker-carlos-alfredo-beta.platform.beta.sidepro.app
+  appchart: standard

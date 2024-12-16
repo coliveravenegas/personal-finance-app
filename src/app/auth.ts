@@ -14,9 +14,10 @@ export const {
     GitHub({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+      // For debugging purposes
       authorization: {
         params: {
-          redirect_uri: process.env.GITHUB_REDIRECT_URL,
+          scope: 'read:user user:email',
         },
       },
     }),
@@ -37,7 +38,22 @@ export const {
       }
       return session
     },
-    async signIn({ user }) {
+    async signIn({ user, account, profile }) {
+      console.log('Sign In Debug:', {
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+        },
+        account: {
+          provider: account?.provider,
+          type: account?.type,
+        },
+        profile: {
+          id: profile?.id,
+          email: profile?.email,
+        },
+      })
       if (!user.email) return false
 
       try {
