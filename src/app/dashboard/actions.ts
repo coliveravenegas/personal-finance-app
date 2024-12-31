@@ -46,7 +46,9 @@ export async function createTransaction(data: TransactionSchema) {
 }
 
 export async function handleSignOut() {
-  await signOut()
+  await signOut({
+    redirectTo: '/login'
+  })
 }
 
 export async function handleGitHubSignIn() {

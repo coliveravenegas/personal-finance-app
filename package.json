@@ -14,7 +14,7 @@
     "type-check": "tsc --noEmit",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
-    "prisma:studio": "prisma studio",
+    "prisma:studio": "dotenv -e .env.local npx prisma studio",
     "prisma:seed": "node prisma/seed.js",
     "postinstall": "prisma generate"
   },
@@ -61,6 +61,7 @@
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "autoprefixer": "^10.0.1",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^9.16.0",
     "eslint-config-next": "15.1.0",
     "eslint-config-prettier": "^9.1.0",
